@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+<head>
+ <style>
+    :root {
+    --color1:red;
+    --color2:blue;
+    --color3:green;
+    --color4:yellow;
+    --color5:violet;
+    }
+
+    @keyframes colorChange {
+        0% {background-color: var(--color1); filter:drop-shadow(8px 8px 10px var(--color1))}
+        20% {background-color: var(--color2); filter:drop-shadow(8px 8px 10px var(--color2))}
+        40% {background-color: var(--color3); filter:drop-shadow(8px 8px 10px var(--color3))}
+        60% {background-color: var(--color4); filter:drop-shadow(8px 8px 10px var(--color4))}
+        80% {background-color: var(--color5); filter:drop-shadow(8px 8px 10px var(--color5))}
+        100% {background-color: var(--color1); filter:drop-shadow(8px 8px 10px var(--color1))}
+    }
+
+    body {
+      background-color: black;
+      margin: 0;
+      padding: 0;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+      grid-template-rows: repeat(auto-fit, minmax(100px, 1fr));
+      grid-gap: 1px;
+      justify-content: center; /* Center horizontally */
+      align-items: center; /* Center vertically */
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+      background-image: linear-gradient(rgb(75, 75, 75) 1px, transparent 1px), linear-gradient(90deg, rgb(75, 75, 75), 1px, transparent 1px);
+      background-size: 100px 100px;
+      background-position: -1px -1px;
+    }
+  </style>
+</head>
+<body>
+    <script>
+        let isDragging = false;
+        let startX;
+        let startY;
+
+        document.addEventListener('keydown', function(event) {
+          if (event.key === 'm' || event.key === 'M') {
+            isDragging = true;
+          }
+        });
+
+        document.addEventListener('keyup', function(event) {
+          if (event.key === 'm' || event.key === 'M') {
+            isDragging = false;
+          }
+        });
+
+        function getRndInteger(min, max) {
+            return Math.floor(Math.random() * (max - min) ) + min;
+        }
+
+        for (let index = -180; index < 360; index += 3) {
+          const newdiv = document.createElement("div");
+          newdiv.style.width = "20px";
+          newdiv.style.height = "20px";
+          newdiv.style.backgroundColor = "white";
+          newdiv.style.position = "absolute";
+          newdiv.style.top = "50%"; /* Center vertically */
+          newdiv.style.left = "50%"; /* Center horizontally */
+          newdiv.style.borderRadius = "50%";
+          newdiv.style.filter = "blur(1px) drop-shadow(8px 8px 10px white)";
+          newdiv.style.animationName = "colorChange";
+          newdiv.style.animationDuration = "5s";
+          newdiv.style.animationIterationCount = "infinite";
+          newdiv.style.animationDirection = "alternate";
+          newdiv.style.animationDelay = `${index / 100.0}s`;
+          const deg = Math.PI / 180.0 * index;
+          const first = 2 * index;
+          const second = 200 * Math.fround(deg);
+          newdiv.style.transform = `translate(${first}px,${second}px) scale(1)`;
+          document.body.appendChild(newdiv);
+
+          newdiv.addEventListener('mousedown', startDrag);
+          newdiv.addEventListener('mouseup', stopDrag);
+        }
+
+        function startDrag(event) {
+          if (isDragging) {
+            startX = event.clientX;
+            startY = event.clientY;
+
+            document.addEventListener('mousemove', drag);
+          }
+        }
+
+        function stopDrag(event) {
+          if (isDragging) {
+            document.removeEventListener('mousemove', drag);
+          }
+        }
+
+        function drag(event) {
+          const dx = event.clientX - startX;
+          const dy = event.clientY - startY;
+
+          const transform = event.target.style.transform;
+          const translateValues = transform.match(/translate\((-?\d+)px,\s*(-?\d+)px\)/);
+          const currentTranslateX = parseInt(translateValues[1]);
+          const currentTranslateY = parseInt(translateValues[2]);
+
+          const newTranslateX = currentTranslateX + dx;
+          const newTranslateY = currentTranslateY + dy;
+
+          event.target.style.transform = `translate(${newTranslateX}px, ${newTranslateY}px) scale(1)`;
+
+          startX = event.clientX;
+          startY = event.clientY;
+        }
+    </script>
+</body>
+</html>
