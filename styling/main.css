@@ -66,6 +66,30 @@ body::before {
   margin: auto;
 }
 
+
+.func-button {
+  background-color: transparent;
+  border: 0px solid white;
+  border-radius: 20px;
+  color: rgb(134, 134, 134);
+  padding: 10px 20px;
+  font-size: 16px;
+}
+
+.func-button:active, .func-button:focus {
+    color:rgb(255, 255, 255);
+    font-size: 1.2em;
+}
+
+.hidden {
+  display:none;
+}
+
+.about-text {
+  color: rgb(189, 189, 189);
+  font-size: 0.8em;
+}
+
 #scrollable-container {
   /*Now here is the thing, each styling is compatible with their browser, so just keep them here...*/
   scrollbar-width: none; 
@@ -94,27 +118,4 @@ body::before {
   font-size: 18px;
   background-color: rgba(255, 255, 255, 0.041);
   margin: auto;
-}
-
-.func-button {
-  background-color: transparent;
-  border: 0px solid white;
-  border-radius: 20px;
-  color: rgb(134, 134, 134);
-  padding: 10px 20px;
-  font-size: 16px;
-}
-
-.func-button:active, .func-button:focus {
-    color:rgb(255, 255, 255);
-    font-size: 1.2em;
-}
-
-.hidden {
-  display:none;
-}
-
-.about-text {
-  color: rgb(189, 189, 189);
-  font-size: 0.8em;
 }
