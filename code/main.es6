@@ -1,3 +1,4 @@
+//Code made by nikkeisadev
 function toggleAbout(id) {
   var div = document.getElementById(id);
   div.classList.toggle('hidden');
