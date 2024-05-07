@@ -1,0 +1,80 @@
+
+.dropdown-item.rainbow {
+  font-weight: 1000;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  background-image: linear-gradient(to right, #ff0000, #2600ff, #00ff40);
+}
+
+.dropdown-item.aqua {
+  font-weight: 1000;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  background-image: linear-gradient(to right, #00ffff, #00a2ff, #0099ff);
+}
+
+.dropdown-item.orange {
+  font-weight: 1000;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  background-image: linear-gradient(to right, #ff6600, #ff9100, #ffae00);
+}
+
+.dropdown-item.hades {
+  font-weight: 1000;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  background-image: linear-gradient(to right, #006eff, #00ff4c);
+}
+
+.dropdown-item.gummyworm {
+  font-weight: 1000;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  background-image: linear-gradient(to right, #ff9100, #00ff6a, #6f00ff);
+}
+
+.dropdown-item.seaside {
+  font-weight: 1000;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  background-image: linear-gradient(to right, #ffe07b, #d1e6f1, #0099ff);
+}
+
+.dropdown-item.urban {
+  font-weight: 1000;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  background-image: linear-gradient(to right, #80aef3, #525252, #fabf52);
+}
+
+.dropdown-item.ozone {
+  font-weight: 1000;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  background-image: linear-gradient(to right, #ffffff, #c4e9ff, #90d2ff);
+}
+
+.dropdown-item.galactica {
+  font-weight: 1000;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  background-image: linear-gradient(to right, #4b4b4b, #5900ff);
+}
+
+.dropdown-item.sunsetlavender {
+  font-weight: 1000;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  background-image: linear-gradient(to right, #ff3a3a, #c5a2fd);
+}

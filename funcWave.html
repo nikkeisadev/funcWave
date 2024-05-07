@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">  
+      <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Code+Pro&amp;display=swap">
+        <link rel="stylesheet" href="styling/main.css">
+          <link rel="stylesheet" href="styling/dropdown-gradients.css"> 
+  
+  <style>
+    :root {
+      --color1:rgb(21, 255, 0);
+      --color2:rgb(217, 255, 0);
+      --color3:rgb(255, 0, 0);
+      --color4:rgb(111, 0, 255);
+      --color5:rgb(38, 0, 255);
+    }
+
+
+    @keyframes colorChange {
+      0% {background-color: var(--color1); filter:drop-shadow(8px 8px 10px var(--color1))}
+      20% {background-color: var(--color2); filter:drop-shadow(8px 8px 10px var(--color2))}
+      40% {background-color: var(--color3); filter:drop-shadow(8px 8px 10px var(--color3))}
+      60% {background-color: var(--color4); filter:drop-shadow(8px 8px 10px var(--color4))}
+      80% {background-color: var(--color5); filter:drop-shadow(8px 8px 10px var(--color5))}
+      100% {background-color: var(--color1); filter:drop-shadow(8px 8px 10px var(--color1))}
+    }
+  </style>
+</head>
+<body>
+  <nav class="navbar navbar-expand-lg bg-body-tertiary navbar-dark bg-dark">
+    <img src="images/funWave_logo.png" width="300em">
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link" href="#" onclick="toggleAbout('text-box')">About</a>
+            </li>
+        <li class="nav-item">
+          <a class="nav-link" href="https://github.com/nikkeisadev">Projects</a>
+            </li>
+        <li class="nav-item">
+          <a class="nav-link" href="https://nikkeisadev.github.io">Github</a>
+            </li>
+        <li class="nav-item">
+          <a class="nav-link"  onclick="toggleAbout('scrollable-container')" href="#">Functions</a>
+            </li>
+    <li class="nav-item dropdown">
+      <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+        Themes
+      </a>
+      <ul class="dropdown-menu">
+        <li><a class="dropdown-item rainbow" onclick="changeColors('#15FF00', '#D9FF00', '#FF0000', '#6F00FF', '#2600FF')">Rainbow</a></li>
+        <li><a class="dropdown-item aqua" onclick="changeColors('#00FFEA', '#00C3FF', '#00B7FF', '#008CFF', '#003CFF')">Aqua</a></li>
+        <li><a class="dropdown-item orange" onclick="changeColors('#FF8D23', '#FF7741', '#FF5E00', '#FF5100', '#FF2600')">Orange</a></li>
+        <li><a class="dropdown-item hades " onclick="changeColors('#4423FF', '#87FF41', 'transparent', 'transparent', 'transparent')">Hades</a></li>
+        <li><a class="dropdown-item gummyworm" onclick="changeColors('#FF9900', '#9DFF00', '#00EAEA', '#A200FF', '#FF008C')">Gummy Worm</a></li>
+        <li><a class="dropdown-item seaside" onclick="changeColors('#40E0D0', '#87CEEB', '#F4A460', '#FFF5EE', '#FF7F50')">Seaside</a></li>
+        <li><a class="dropdown-item urban" onclick="changeColors('#464646', '#6A5ACD', '#222222', '#FFFFF0', '#B87333')">Urban</a></li>
+        <li><a class="dropdown-item ozone" onclick="changeColors('#E5FBFB', '#F6FDFF', '#EBEDF0', '#CBE2F2', '#BBD6EC')">Ozone</a></li>
+        <li><a class="dropdown-item galactica" onclick="changeColors('#6A5ACD', '#222222', '#6A5ACD', '#222222', '#6A5ACD')">Galactica</a></li>
+        <li><a class="dropdown-item sunsetlavender" onclick="changeColors('#DC143C', '#FF8C00', '#DAA520', '#FFCA9B', '#9696FF')">Sunset Lavender</a></li>
+          </ul>
+            </li>
+    <li class="nav-item active">
+      <a class="nav-link reset-button href="funcWave.html" onClick="window.location.reload();">Reset</a>
+        </li>
+      </ul>
+
+    </div>
+  </nav>
+
+  <div id="scrollable-container" class="hidden">
+    <button class="func-button" onclick="rendererFunctions('sin')">sin</button>
+    <button class="func-button" onclick="rendererFunctions('asin')">asin</button>
+    <button class="func-button" onclick="rendererFunctions('asinh')">asinh</button>
+    <button class="func-button" onclick="rendererFunctions('cos')">cos</button>
+    <button class="func-button" onclick="rendererFunctions('acos')">acos</button>
+    <button class="func-button" onclick="rendererFunctions('acosh')">acosh</button>
+    <button class="func-button" onclick="rendererFunctions('abs')">abs</button>
+    <button class="func-button" onclick="rendererFunctions('atan')">atan</button>
+    <button class="func-button" onclick="rendererFunctions('atan2')">atan2</button>
+    <button class="func-button" onclick="rendererFunctions('cbrt')">cbrt</button>
+    <button class="func-button" onclick="rendererFunctions('clz32')">clz32</button>
+    <button class="func-button" onclick="rendererFunctions('exp')">exp</button>
+    <button class="func-button" onclick="rendererFunctions('expm1')">expm1</button>
+    <button class="func-button" onclick="rendererFunctions('floor')">floor</button>
+    <button class="func-button" onclick="rendererFunctions('fround')">fround</button>
+    <button class="func-button" onclick="rendererFunctions('hypot')">hypot</button>
+    <button class="func-button" onclick="rendererFunctions('imul')">imul</button>
+    <button class="func-button" onclick="rendererFunctions('log')">log</button>
+    <button class="func-button" onclick="rendererFunctions('log10')">log10</button>
+    <button class="func-button" onclick="rendererFunctions('log1p')">log1p</button>
+    <button class="func-button" onclick="rendererFunctions('log2')">log2</button>
+    <button class="func-button" onclick="rendererFunctions('max')">max</button>
+    <button class="func-button" onclick="rendererFunctions('min')">min</button>
+    <button class="func-button" onclick="rendererFunctions('random')">random</button>
+    <button class="func-button" onclick="rendererFunctions('round')">round</button>
+    <button class="func-button" onclick="rendererFunctions('sigh')">sigh</button>
+    <button class="func-button" onclick="rendererFunctions('sqrt')">sqrt</button>
+    <button class="func-button" onclick="rendererFunctions('tan')">tan</button>
+    <button class="func-button" onclick="rendererFunctions('tanh')">tanh</button>
+    <button class="func-button" onclick="rendererFunctions('trunc')">trunc</button>
+  </div>
+
+  <div id="text-box" class="hidden">
+    <h4>About funcWave</h4>
+    <p class="about-text">funcWave is a function rendering <br> 
+      html page, made from originaly a school project. <br>
+      You can renderer all the functions that <br>
+      Visual Studio Code supports. To get started <br>
+      click on Functions. Have fun testing my project! ❤
+    </p>
+  </div> 
+
+  <script>
+
+    function changeColors(color1, color2, color3, color4, color5) {
+      var root = document.documentElement;
+
+      root.style.setProperty('--color1', color1);
+      root.style.setProperty('--color2', color2);
+      root.style.setProperty('--color3', color3);
+      root.style.setProperty('--color4', color4);
+      root.style.setProperty('--color5', color5);
+    }
+
+    function rendererFunctions(funcType) {
+      for (let index = -180; index < 360; index += 3) {
+        const declaredFunctionName = funcType; 
+        const newdiv = document.createElement("div");
+        newdiv.style.width = "20px";
+        newdiv.style.height = "20px";
+        newdiv.style.backgroundColor = "white";
+        newdiv.style.position = "absolute";
+        newdiv.style.top = "50%"; /* Center vertically */
+        newdiv.style.left = "50%"; /* Center horizontally */
+        newdiv.style.transform = "translate(-50%, -50%)"; /* Adjust position to center */
+        newdiv.style.borderRadius = "50%";
+        newdiv.style.filter = "blur(1px) drop-shadow(8px 8px 10px white)";
+        newdiv.style.animationName = "colorChange";
+        newdiv.style.animationDuration = "5s";
+        newdiv.style.animationIterationCount = "infinite";
+        newdiv.style.animationDirection = "alternate";
+        newdiv.style.animationDelay = `${index / 100.0}s`;
+
+        const deg = (Math.PI / 180.0) * index;
+        const first = 2 * index;
+        const second = 200 * Math[declaredFunctionName](deg); // Use square bracket notation
+
+        newdiv.style.transform += ` translate(${first}px,${second}px) scale(1)`;
+        document.body.appendChild(newdiv);
+      }
+    }
+  </script>
+  <script src="code/main.es6"></script>
+  <sciprt src="code/rendering.es6"></sciprt>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy" crossorigin="anonymous"></script>
+
+</body>
+</html>

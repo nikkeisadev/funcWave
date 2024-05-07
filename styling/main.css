@@ -1,0 +1,120 @@
+body {
+  font-family: 'Source Code Pro', monospace;
+  background-color: black;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+  grid-template-rows: repeat(auto-fit, minmax(100px, 1fr));
+  grid-gap: 1px;
+  justify-content: center; /* Center horizontally */
+  align-items: center; /* Center vertically */
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  background-image: linear-gradient(rgb(107, 107, 107) 1px, transparent 1px), linear-gradient(90deg, rgb(107, 107, 107), 1px, transparent 1px);
+  background-size: 100px 100px;
+  background-position: -1px -1px;
+}
+
+.dropdown-menu {
+  background-color: rgba(255, 255, 255, 0);
+}
+
+.welcome-text{
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  color: white;
+}
+
+.navbar {
+  background-color: transparent !important;
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+
+.reset-button {
+  color: rgb(255, 255, 255);
+  font-weight: 900;
+  background-color: rgba(255, 98, 98, 0.171);
+  border: 0.2em solid rgb(158, 12, 12);
+  border-radius: 10px;
+}
+
+.reset-button:hover {
+  color: rgb(255, 0, 0);
+}
+
+.func-box {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  padding: 10px;
+  background-color: transparent;
+  color: white;
+  font-size: 18px;
+
+  margin: auto;
+}
+
+#scrollable-container {
+  /*Now here is the thing, each styling is compatible with their browser, so just keep them here...*/
+  scrollbar-width: none; 
+  scrollbar-width: thin;
+  scrollbar-color: transparent transparent;
+  -ms-overflow-style: none;
+
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  padding: 10px;
+  background-color: transparent;
+  color: white;
+  font-size: 18px;
+  width: 100px;
+  height: 100%;
+  overflow-y: scroll;
+}
+
+#text-box {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  padding: 10px;
+  color: white;
+  font-size: 18px;
+  background-color: rgba(255, 255, 255, 0.041);
+  margin: auto;
+}
+
+.func-button {
+  background-color: transparent;
+  border: 0px solid white;
+  border-radius: 20px;
+  color: rgb(134, 134, 134);
+  padding: 10px 20px;
+  font-size: 16px;
+}
+
+.func-button:active, .func-button:focus {
+    color:rgb(255, 255, 255);
+    font-size: 1.2em;
+}
+
+.hidden {
+  display:none;
+}
+
+.about-text {
+  color: rgb(189, 189, 189);
+  font-size: 0.8em;
+}

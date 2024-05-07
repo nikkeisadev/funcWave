@@ -1,0 +1,19 @@
+{
+  "extends": [
+    "development"
+  ],
+  "hints": {
+    "compat-api/css": [
+      "default",
+      {
+        "ignore": [
+          "scrollbar-width",
+          "scrollbar-color"
+        ]
+      }
+    ],
+    "axe/text-alternatives": "off",
+    "meta-viewport": "off",
+    "axe/language": "off"
+  }
+}
