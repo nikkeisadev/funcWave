@@ -3,7 +3,7 @@
 ## 🔴🟠🟡🟢🔵🟣funcWave, html function renderer.
 Originaly made from a school project to *renderer Sinus and Cosinus Mathematical functions* with some RGB effect, but I noticed that *I can renderer all the functions which VS Code supports*, so there are **40 functions** that you can test how you want. Combine and color them, use your creativity!
 
-You can choose from 10 different themes! \(￣︶￣*\))
+### You can choose from 10 different themes! \(￣︶￣*\))
 - Rainbow (default) 🌈
 - Aqua 🌊
 - Orange 🍊
