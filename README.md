@@ -22,7 +22,7 @@ When you open up the page you will find a few buttons on the top such as `Themes
 - Themes 📕: I made 10 different themes to make the functions look cooler, there will be an update for themes. *(Check down bellow)*
   
 ## Incoming updates 🧩
-I've been thinking about creating a more editor like infterface where you can zoom, outzoom, etc.
+I've been thinking about creating a more editor like interface where you can zoom, outzoom, etc.
 There is also an idea to allow the user to create their own themes.
 > There will be a few bug fixes as well, for example, there are 41 functions, *but 40 functional only*, cuz one is not an actual function.
  
