@@ -14,6 +14,12 @@ Originaly made from a school project to *renderer Sinus and Cosinus Mathematical
 - Ozone 🌏
 - Galactica 🌌
 - Sunset Lavender 🌅
-
+- 
+## Incoming updates 🧩
+I've been thinking about creating a more editor like infterface where you can zoom, outzoom, etc.
+There is also an idea to allow the user to create their own themes.
+> There will be a few bug fixes as well, for example, there are 41 functions, but 40 functional only, cuz one is not an actual function.
+ 
+## Recording from the runtime 🎥
+*A few function combined with the Hades theme.*
 ![funcwave1](https://github.com/nikkeisadev/funcWave/assets/137056695/645f76b6-5e05-46ad-b1c0-77e38c584477)
-![funcwave2](https://github.com/nikkeisadev/funcWave/assets/137056695/9e2693fa-4579-49b6-bba4-6ce1dd088d05)
